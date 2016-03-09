@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Configs">
+      <UniqueIdentifier>{ad25c68c-4884-4f7a-9700-187ed301ef69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\util">
+      <UniqueIdentifier>{fe7cec4f-d711-44da-8bcb-ce0cac6a7cbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\sensor_client">
+      <UniqueIdentifier>{e3e972d7-cafb-4141-87b2-b695e0a55166}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\util\config">
+      <UniqueIdentifier>{0b74520a-9843-4cc5-ba8e-efdc5793d4cb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="indoor_scene_logging_system.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="sensor_client\sensor_client.cpp">
+      <Filter>ソース ファイル\sensor_client</Filter>
+    </ClCompile>
+    <ClCompile Include="sensor_client\kinectv2_client.cpp">
+      <Filter>ソース ファイル\sensor_client</Filter>
+    </ClCompile>
+    <ClCompile Include="util\util.cpp">
+      <Filter>ソース ファイル\util</Filter>
+    </ClCompile>
+    <ClCompile Include="util\config\config.cpp">
+      <Filter>ソース ファイル\util\config</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="util\util.h">
+      <Filter>ソース ファイル\util</Filter>
+    </ClInclude>
+    <ClInclude Include="sensor_client\kinectv2_client.h">
+      <Filter>ソース ファイル\sensor_client</Filter>
+    </ClInclude>
+    <ClInclude Include="sensor_client\sensor_client.h">
+      <Filter>ソース ファイル\sensor_client</Filter>
+    </ClInclude>
+    <ClInclude Include="indoor_scene_logging_system.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="util\config\config.h">
+      <Filter>ソース ファイル\util\config</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
