@@ -21,6 +21,12 @@
     <Filter Include="ソース ファイル\util\config">
       <UniqueIdentifier>{0b74520a-9843-4cc5-ba8e-efdc5793d4cb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\util\kinect_pack_util">
+      <UniqueIdentifier>{213fc4c4-1cae-4dc9-bb5c-c48c52aa7b41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\util\msgpack_util">
+      <UniqueIdentifier>{ef11a99e-d8d0-4413-b46d-b016e3e6e947}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -41,6 +47,9 @@
     <ClCompile Include="util\config\config.cpp">
       <Filter>ソース ファイル\util\config</Filter>
     </ClCompile>
+    <ClCompile Include="util\base64.cpp">
+      <Filter>ソース ファイル\util</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="util\util.h">
@@ -57,6 +66,18 @@
     </ClInclude>
     <ClInclude Include="util\config\config.h">
       <Filter>ソース ファイル\util\config</Filter>
+    </ClInclude>
+    <ClInclude Include="kinect_pack.h">
+      <Filter>ソース ファイル\sensor_client</Filter>
+    </ClInclude>
+    <ClInclude Include="util\base64.h">
+      <Filter>ソース ファイル\util</Filter>
+    </ClInclude>
+    <ClInclude Include="util\kinect_pack_util\kinect_pack_util.h">
+      <Filter>ソース ファイル\util\kinect_pack_util</Filter>
+    </ClInclude>
+    <ClInclude Include="util\msgpack_util\msgpack_util.h">
+      <Filter>ソース ファイル\util\msgpack_util</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
