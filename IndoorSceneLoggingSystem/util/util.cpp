@@ -1,5 +1,5 @@
 #include "util.h"
-
+#include "base64.h"
 namespace util
 {
 	template< typename T >
@@ -45,4 +45,39 @@ namespace util
 		v.push_back( s );
 		return v;
 	}
+
+	cv::Mat ConvertVec2Mat( const std::vector<unsigned char>& vec )
+	{
+		if ( vec.size() == 0 )
+		{
+			return cv::Mat::zeros( 1920, 1080, CV_8UC3 );
+		}
+		return cv::imdecode( cv::Mat( vec ), CV_LOAD_IMAGE_UNCHANGED );
+	}
+
+	cv::Mat ConvertString2Mat( std::string str )
+	{
+		std::vector< unsigned char > buf( str.begin(), str.end() );
+		buf.push_back( '0' );
+
+		return cv::imdecode( cv::Mat( buf ), CV_LOAD_IMAGE_UNCHANGED );
+	}
+
+	std::string ConvertMat2String( cv::Mat mat )
+	{
+		if ( mat.data == NULL )
+		{
+			return "";
+		}
+		std::vector< unsigned char > buf;
+		std::vector< int > param = std::vector< int >( 2 );
+		param[0] = CV_IMWRITE_JPEG_QUALITY;
+		param[1] = 95;
+		cv::imencode( ".jpg", mat, buf, param );
+		std::istringstream iss( std::string( buf.begin(), buf.end() ) );
+		std::ostringstream oss;
+		base64::Encode( iss, oss );
+		return oss.str();
+	}
+
 }

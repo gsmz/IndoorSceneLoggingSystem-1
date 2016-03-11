@@ -7,6 +7,7 @@
 #include <string>
 #include <vector>
 #include <ctime>
+#include <opencv2\opencv.hpp>
 /**
 * Util–¼‘O‹óŠÔ
 */
@@ -47,4 +48,9 @@ namespace util
 	std::vector<std::string> Split( std::string s, std::string t );
 
 	std::vector<std::string> SplitFirst( std::string s, const std::string t );
+
+	cv::Mat ConvertVec2Mat( const std::vector<unsigned char>& vec );
+	cv::Mat ConvertString2Mat( std::string str );
+	std::string ConvertMat2String( cv::Mat mat );
+
 }
