@@ -1,5 +1,5 @@
 #pragma once
-#include "sensor_client\kinectv2_client.h"
+#include "client\sensor_client\kinectv2_client.h"
 
 class IndoorSceneLoggingSystem
 {
@@ -9,7 +9,7 @@ public:
 	*/
 	IndoorSceneLoggingSystem();
 private:
-	sensor_client::KinectV2Client* kinectv2_client_;
+	client::sensor_client::KinectV2Client* kinectv2_client_;
 private:
 	void Init();
 public:

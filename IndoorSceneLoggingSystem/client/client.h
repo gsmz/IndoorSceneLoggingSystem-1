@@ -4,7 +4,7 @@
 /**
 * Sensor名前空間
 */
-namespace sensor_client
+namespace client
 {
 	typedef int SocketType;
 
@@ -41,14 +41,14 @@ namespace sensor_client
 	/**
 	* SensorClientクラス
 	*/
-	class SensorClient
+	class Client
 	{
 	public:
 		/**
 		* コンストラクタ
 		*/
-		SensorClient( std::string client_name, SocketType socket_type, const int num_threads = 1 );
-		virtual ~SensorClient();
+		Client( std::string client_name, SocketType socket_type, const int num_threads = 1 );
+		virtual ~Client();
 
 	public:
 		void Init();

@@ -6,8 +6,8 @@
 #include <vector>
 #include <vector>
 #include <utility>
-#include "../util.h"
-#include "../../sensor_client/kinect_pack.h"
+#include "..\util.h"
+#include "..\..\client\sensor_client\kinect_pack.h"
 namespace util
 {
 	namespace kinect_pack_util

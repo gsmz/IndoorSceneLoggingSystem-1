@@ -10,7 +10,7 @@ void IndoorSceneLoggingSystem::Init()
 	{
 		delete kinectv2_client_;
 	}
-	kinectv2_client_ = new sensor_client::KinectV2Client();
+	kinectv2_client_ = new client::sensor_client::KinectV2Client();
 }
 void IndoorSceneLoggingSystem::Run()
 {

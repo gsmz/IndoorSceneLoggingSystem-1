@@ -1,30 +1,30 @@
-#include "sensor_client.h"
+#include "client.h"
 #include "..\util\config\config.h"
 #include <thread>
 
 
-void DoMonitor( sensor_client::Monitor &monitor, zmq::socket_t &socket )
+void DoMonitor( client::Monitor &monitor, zmq::socket_t &socket )
 {
 	std::cout << "start" << std::endl;
 	monitor.monitor( socket, "inproc://monitor.req", ZMQ_EVENT_ALL );
 }
-namespace sensor_client
+namespace client
 {
 	Monitor::Monitor() : zmq::monitor_t()
 	{
 
 	}
 
-	SensorClient::SensorClient( std::string client_name, SocketType socket_type, const int num_threads) : client_name_(client_name), socket_type_(socket_type), num_threads_(num_threads)
+	Client::Client( std::string client_name, SocketType socket_type, const int num_threads) : client_name_(client_name), socket_type_(socket_type), num_threads_(num_threads)
 	{
 		Init();
 	}
-	SensorClient::~SensorClient()
+	Client::~Client()
 	{
 		if ( socket_ ) delete socket_;
 		if ( monitor_ ) delete monitor_;
 	}
-	void SensorClient::Connect()
+	void Client::Connect()
 	{
 		std::string filename = client_name_ + ".config";
 		util::config::ConfigTable config_table = util::config::ReadConfig( filename );
@@ -36,20 +36,20 @@ namespace sensor_client
 		std::string port = config_table["port"];
 		socket_->connect( "tcp://" + ipaddr + ":" + port );
 	}
-	void SensorClient::Send( const std::string send_message_string )
+	void Client::Send( const std::string send_message_string )
 	{
 		zmq::message_t send_message( send_message_string.size() );
 		memcpy( send_message.data(), send_message_string.data(), send_message_string.size() );
 		socket_->send( send_message );
 	}
-	void SensorClient::Receive( std::string &receive_message_string )
+	void Client::Receive( std::string &receive_message_string )
 	{
 		zmq::message_t receive_message;
 		socket_->recv(&receive_message );
 		receive_message_string = std::string( static_cast<char*>( receive_message.data() ), receive_message.size() );
 	}
 
-	void SensorClient::Init()
+	void Client::Init()
 	{
 		try
 		{
